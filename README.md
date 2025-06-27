@@ -53,31 +53,33 @@ different provider have different message types, the system is designed to proce
 #### ODDS_UPDATE message
 ```json
 {
-  "eventId" : "12345",
+  "eventId" : "67890",
   "marketType" : "MATCH_RESULT",
-  "timestamp" : "2025-06-27T18:11:35.607365",
-  "provider" : "Alpha",
+  "timestamp" : "2025-06-27T18:19:19.882693",
+  "provider" : "Beta",
+  "messageType" : "ODDS_UPDATE",
   "odds" : [ {
     "outcome" : "HOME_WIN",
-    "value" : 1.5
+    "value" : 1.8
   }, {
     "outcome" : "DRAW",
-    "value" : 2.0
+    "value" : 2.3
   }, {
     "outcome" : "AWAY_WIN",
-    "value" : 1.3
+    "value" : 2.2
   } ]
 }
 ```
 #### BET_SETTLEMENT message
 ```json
 {
-  "eventId" : "123454",
+  "eventId" : "657890",
   "marketType" : "MATCH_RESULT",
-  "timestamp" : "2025-06-27T18:12:08.874572",
-  "provider" : "Alpha",
+  "timestamp" : "2025-06-27T18:19:25.427587",
+  "provider" : "Beta",
+  "messageType" : "BET_SETTLEMENT",
   "outcomes" : [ {
-    "outcome" : "HOME_WIN",
+    "outcome" : "AWAY_WIN",
     "result" : "WIN"
   } ]
 }

@@ -1,0 +1,12 @@
+security:
+  checksum:
+    enabled: true
+    secrets:
+      alpha: secret-alpha
+      beta: secret-beta
+  ratelimit:
+    enabled: true
+    limits:
+      alpha: 4
+      beta: 5
+    period-seconds: 30

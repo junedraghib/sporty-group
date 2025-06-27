@@ -7,6 +7,7 @@ import com.sportygroup.betting.dto.provider.beta.BetaBetSettlementMessage;
 import com.sportygroup.betting.dto.provider.beta.BetaOddsChangeMessage;
 import com.sportygroup.betting.enums.BetaOutcome;
 import com.sportygroup.betting.enums.MarketType;
+import com.sportygroup.betting.enums.MessageType;
 import com.sportygroup.betting.enums.StandardOutcome;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -43,6 +44,7 @@ public class BetaMessageAdapter implements MessageAdapter {
                 .eventId(message.getEventId())
                 .marketType(MarketType.MATCH_RESULT)
                 .provider("Beta")
+                .messageType(MessageType.ODDS_UPDATE)
                 .timestamp(LocalDateTime.now().toString())
                 .odds(standardOdds)
                 .build();
@@ -57,6 +59,7 @@ public class BetaMessageAdapter implements MessageAdapter {
                 .eventId(message.getEventId())
                 .marketType(MarketType.MATCH_RESULT)
                 .timestamp(LocalDateTime.now().toString())
+                .messageType(MessageType.BET_SETTLEMENT)
                 .provider("Beta")
                 .outcomes(Collections.singletonList(standardSettlement))
                 .build();

@@ -1,6 +1,7 @@
 package com.sportygroup.betting.dto;
 
 import com.sportygroup.betting.enums.MarketType;
+import com.sportygroup.betting.enums.MessageType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,4 +20,5 @@ public class StandardizedMessage {
     private MarketType marketType = MarketType.MATCH_RESULT; //SET DEFAULT TO MATCH_RESULT
     private String timestamp = LocalDateTime.now().toString(); // Default to current time
     private String provider; // The provider of the message, e.g., "Alpha", "Beta"
+    private MessageType messageType; // Type of the message, e.g., "OddsChange", "BetSettlement"
 }

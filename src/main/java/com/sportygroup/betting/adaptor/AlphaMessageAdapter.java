@@ -7,6 +7,7 @@ import com.sportygroup.betting.dto.provider.alpha.AlphaBetSettlementMessage;
 import com.sportygroup.betting.dto.provider.alpha.AlphaOddsChangeMessage;
 import com.sportygroup.betting.enums.AlhpaOutcome;
 import com.sportygroup.betting.enums.MarketType;
+import com.sportygroup.betting.enums.MessageType;
 import com.sportygroup.betting.enums.StandardOutcome;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -44,6 +45,7 @@ public class AlphaMessageAdapter implements MessageAdapter {
                 .marketType(MarketType.MATCH_RESULT)
                 .provider("Alpha")
                 .timestamp(LocalDateTime.now().toString())
+                .messageType(MessageType.ODDS_UPDATE)
                 .odds(standardOdds)
                 .build();
     }
@@ -57,6 +59,7 @@ public class AlphaMessageAdapter implements MessageAdapter {
                 .eventId(message.getEventId())
                 .marketType(MarketType.MATCH_RESULT)
                 .timestamp(LocalDateTime.now().toString())
+                .messageType(MessageType.BET_SETTLEMENT)
                 .provider("Alpha")
                 .outcomes(Collections.singletonList(standardSettlement))
                 .build();

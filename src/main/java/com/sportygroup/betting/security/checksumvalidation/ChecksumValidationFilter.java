@@ -100,7 +100,7 @@ public class ChecksumValidationFilter extends OncePerRequestFilter {
 
             filterChain.doFilter(cachedRequest, response);
         } else {
-            filterChain.doFilter(request, response);
+            filterChain.doFilter(cachedRequest, response);
         }
     }
 

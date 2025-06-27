@@ -1,12 +1,20 @@
 security:
   checksum:
-    enabled: true
+    enabled: false
     secrets:
       alpha: secret-alpha
       beta: secret-beta
   ratelimit:
-    enabled: true
+    enabled: false
     limits:
       alpha: 4
       beta: 5
     period-seconds: 30
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
+    operations-sorter: method
+    tags-sorter: alpha
+    display-request-duration: true

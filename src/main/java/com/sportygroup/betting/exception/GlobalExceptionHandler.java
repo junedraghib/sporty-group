@@ -50,17 +50,17 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<ErrorResponse> handleHttpMessageNotReadableException(HttpMessageNotReadableException ex) {
-        logger.error("Invalid message format: {}", ex.getMessage());
-        ErrorResponse error = new ErrorResponse(
-            HttpStatus.BAD_REQUEST.value(),
-            "Invalid Message Format",
-            "Failed to parse request body",
-            Instant.now().toString()
-        );
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
-    }
+//    @ExceptionHandler(HttpMessageNotReadableException.class)
+//    public ResponseEntity<ErrorResponse> handleHttpMessageNotReadableException(HttpMessageNotReadableException ex) {
+//        logger.error("Invalid message format: {}", ex.getMessage());
+//        ErrorResponse error = new ErrorResponse(
+//            HttpStatus.BAD_REQUEST.value(),
+//            "Invalid Message Format",
+//            "Failed to parse request body",
+//            Instant.now().toString()
+//        );
+//        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+//    }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGenericException(Exception ex) {

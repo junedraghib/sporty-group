@@ -42,7 +42,8 @@ public class BetaMessageAdapter implements MessageAdapter {
         return StandardizedOddsChangeMessage.builder()
                 .eventId(message.getEventId())
                 .marketType(MarketType.MATCH_RESULT)
-                .timestamp(LocalDateTime.now())
+                .provider("Beta")
+                .timestamp(LocalDateTime.now().toString())
                 .odds(standardOdds)
                 .build();
     }
@@ -55,7 +56,8 @@ public class BetaMessageAdapter implements MessageAdapter {
         return StandardizedBetSettlementMessage.builder()
                 .eventId(message.getEventId())
                 .marketType(MarketType.MATCH_RESULT)
-                .timestamp(LocalDateTime.now())
+                .timestamp(LocalDateTime.now().toString())
+                .provider("Beta")
                 .outcomes(Collections.singletonList(standardSettlement))
                 .build();
     }

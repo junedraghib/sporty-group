@@ -17,5 +17,6 @@ import java.time.LocalDateTime;
 public class StandardizedMessage {
     private String eventId;
     private MarketType marketType = MarketType.MATCH_RESULT; //SET DEFAULT TO MATCH_RESULT
-    private LocalDateTime timestamp = LocalDateTime.now(); // Default to current time
+    private String timestamp = LocalDateTime.now().toString(); // Default to current time
+    private String provider; // The provider of the message, e.g., "Alpha", "Beta"
 }
